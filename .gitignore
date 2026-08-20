@@ -1,0 +1,6 @@
+# Ignore all input and output test files
+*.txt
+
+# Ignore compiled C++ executables
+*.exe
+main
