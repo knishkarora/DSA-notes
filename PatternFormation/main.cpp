@@ -235,11 +235,32 @@ void print19 (int n){
 	}
 }
 
+void print20 (int n){
+	for(int i=1;i<2*n;i++){
+		int stars = i;
+		int spaces = 2*(n-i);
+		if(i>n){
+			stars = 2*n-i;
+			spaces = 2*(i-n);
+		}
+		for(int j=1;j<=stars;j++){
+			cout<<"*";
+		}
+		for(int a=1; a<=spaces; a++){
+			cout<<" ";
+		}
+		for(int b=1; b<=stars; b++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}
+
 int main(){
 
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     int n;
     cin>>n;
-    print19(n);
+    print20(n);
 }
