@@ -136,11 +136,22 @@ void print11 (int n){
     }
 }
 
+void print12 (int n){
+	int start = 1;
+    for(int i=n;i>0;i--){
+        for(int j=1;j<=n-i+1;j++){
+            cout<<start;
+            start = 1 - start;
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
 
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     int n;
     cin>>n;
-    print11(n);
+    print12(n);
 }
