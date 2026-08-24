@@ -147,11 +147,99 @@ void print12 (int n){
     }
 }
 
+void print13 (int n){
+    for(int i=1;i<=n;i++ ){
+    	for(int a=1; a<=i; a++){
+    		cout<<a;
+		}
+		for(int j=2*(n-i);j>0;j--){
+		    cout<<" ";
+		}
+ 	    for(int b=i; b>=1; b--){
+    		cout<<b;
+		}
+        cout<<endl;
+    }
+}
+
+void print14 (int n){
+	int start = 1;
+    for(int i=n;i>0;i--){
+        for(int j=1;j<=n-i+1;j++){
+            cout<<start;
+            start++;
+        }
+        cout<<endl;
+    }
+}
+
+void print15 (int n){
+    for(int i=0;i<n;i++){
+        for(char ch='A';ch <='A' + i; ch++){
+            cout<<ch;
+        }
+        cout<<endl;
+    }
+}
+
+void print16 (int n){
+    for(int i=n-1;i>=0;i--){
+        for(char ch='A';ch <='A' + i; ch++){
+            cout<<ch;
+        }
+        cout<<endl;
+    }
+}
+
+void print17 (int n){
+    char ch = 'A';
+    for(int i=1; i<=n; i++){
+        for(int j=1;j<=i; j++){
+            cout<<ch;
+        }
+        ch = 'A' + i;
+        cout<<endl;
+    }
+}
+
+void print18 (int n){
+    for(int i=1;i<=n;i++){
+    	char ch = 'A';
+    	for(int a=n-i; a>0; a--){
+    		cout<<" ";
+		}
+		for(int j=1;j<=(2*i)-1;j++){
+			if(j<=i){
+				ch = 'A' + (j-1);
+			}else{ 
+				ch--;
+			}
+            cout<<ch;
+		}
+ 	    for(int b=n-i; b>0; b--){
+    		cout<<" ";
+		}
+        cout<<endl;
+    }
+}
+
+void print19 (int n){
+	for(int i=1;i<=n;i++){
+		char start = 'A' + (n-i);
+		for(int j=n;j>=n-i+1;j--){
+			cout<<start;
+			start++;
+			
+		}
+        cout<<endl;
+	}
+}
+
 int main(){
 
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     int n;
     cin>>n;
-    print12(n);
+    print19(n);
 }
