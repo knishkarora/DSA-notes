@@ -35,3 +35,41 @@ public:
     }
 };
 
+## divide and conquer
+
+class Solution {
+public:
+    int helper(vector<int>& nums, int left, int right) {
+        if(left==right){
+            return nums[left];
+        }
+
+        int mid = left + (right - left)/2;
+        int leftAnswer = helper(nums, left, mid);
+        int rightAnswer = helper(nums, mid+1, right);
+
+        int bestleftcross = nums[mid];
+        int runningsum = nums[mid];
+        for(int i=mid-1;i>=left;i--){
+            runningsum+=nums[i];
+            bestleftcross = max(bestleftcross, runningsum);
+        }
+
+        int bestrightcross = nums[mid+1];
+        runningsum = nums[mid+1];
+        for(int i=mid+2;i<=right;i++){
+            runningsum+=nums[i];
+            bestrightcross = max(bestrightcross, runningsum);
+        }
+
+        int crossAnswer = bestleftcross + bestrightcross;
+
+        return max(leftAnswer, max(rightAnswer, crossAnswer));
+    }
+
+
+    int maxSubArray(vector<int>& nums) {
+        return helper(nums, 0, nums.size()-1);
+    }
+};
+
